@@ -27,10 +27,16 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
+ * counter1 is a constant that contains an method, counter two is a method.
+ * Both of them do the same thing.
  * 
  * 2. Which of the two uses a closure? How can you tell?
+ * Counter two uses a closure. Giant hint is the curly bracers
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * Counter1 is preferable if you want to call the function by another name for some reason. Useful for renaming functions.
+ * Counter1 is also preferable when you are writing longer and more difficult programs and trying to save on computational time.
+ * 
  *
 */
 
@@ -56,10 +62,10 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(min, max){
+function inning(){
 
     /*Code Here*/
-return Math.floor(Math.random()* (max-min) + min);
+return Math.floor(Math.random() * 18);
 }
 
 
@@ -78,16 +84,17 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(team1, team2){
+function finalScore(num, callback){
+  let board = ''
+  for(let i = 1; i < num; i++){
+    board += `Home: ${callback} `+ "\n"  + `Away: ${callback}` + "\n" 
 
-  /*Code Here*/
-let score1 = inning(0, 50);
-let score2 = inning(0, 50);
-
-return `${team1}: ${score1}, ${team2}: ${score2}`
+  }
+  return board;
 }
+  /*Code Here*/
 
-console.log(finalScore("Home", "Away"))
+console.log(finalScore(5, inning()))
 
 /* Task 4: 
 
@@ -110,8 +117,22 @@ and returns the score at each pont in the game, like so:
 
 Final Score: 6 - 10 */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(number, callback) {
   /* CODE HERE */
+  let board = '';
+  for(let i = 1; i <= number; i++){
+    if (i === 1){
+      board += `1st Inning: ${callback} - ${callback}`
+    }
+    if (i === 2){
+      board += "\n" + `2nd Inning: ${callback} - ${callback}`
+    } if (i === 3){
+      board += "\n"+ `3rd Inning: ${callback} - ${callback}`
+    } if (i > 3) {
+      board += "\n" + `${i}th Inning: ${callback} - ${callback}`
+    }
+    return board
+  }
+  
 }
-
-
+scoreboard(9, inning())

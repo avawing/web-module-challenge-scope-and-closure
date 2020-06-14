@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+Closure is the bit between the curly bracers. Similar to block scope.
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+The code ends on line 50, after the second time the roll is printed.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
 c. What is the lexical scope of `newRoll`? 
+line 49 - 55
 
 ### Task 2c - Exit Ticket
 
