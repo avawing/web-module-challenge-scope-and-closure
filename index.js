@@ -65,14 +65,15 @@ Write a function called `inning` that generates a random number of points that a
 function inning(){
 
     /*Code Here*/
-return Math.floor(Math.random() * 18);
+return Math.floor(Math.random() * 2);
 }
 
 
 /* Task 3: finalScore()
 
 
-Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) 
+and a number of innings and and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -85,16 +86,18 @@ finalScore(inning, 9) might return:
 */ 
 
 function finalScore(num, callback){
-  let board = ''
+  let score1 = 0;
+  let score2 = 0;
   for(let i = 1; i < num; i++){
-    board += `Home: ${callback} `+ "\n"  + `Away: ${callback}` + "\n" 
-
+    score1 += callback();
+    score2 += callback();
   }
-  return board;
-}
-  /*Code Here*/
+  return `Home: ${score1} `+ "\n"  + `Away: ${score2}` + "\n" ;
 
-console.log(finalScore(5, inning()))
+  /*Code Here*/
+}
+
+console.log(finalScore(5, inning)) 
 
 /* Task 4: 
 
@@ -120,19 +123,27 @@ Final Score: 6 - 10 */
 function scoreboard(number, callback) {
   /* CODE HERE */
   let board = '';
+  let score1 = 0;
+  let score2 = 0;
   for(let i = 1; i <= number; i++){
-    if (i === 1){
-      board += `1st Inning: ${callback} - ${callback}`
+    score1 += callback()
+      score2 += callback()
+    if (i === 1){     
+      board += `1st Inning: ${score1} - ${score2}`
     }
     if (i === 2){
-      board += "\n" + `2nd Inning: ${callback} - ${callback}`
+      board += "\n" + `2nd Inning: ${score1} - ${score2}`
     } if (i === 3){
-      board += "\n"+ `3rd Inning: ${callback} - ${callback}`
-    } if (i > 3) {
-      board += "\n" + `${i}th Inning: ${callback} - ${callback}`
+      board += "\n"+ `3rd Inning: ${score1} - ${score2}`
+    } if (i > 3 && i < number) {
+      board += "\n" + `${i}th Inning: ${score1} - ${score2}` 
+    } if (i === number){
+      board += "\n" + `${i}th Inning: ${score1} - ${score2}` + "\n \n" + `Final Score: ${score1} - ${score2}`
     }
-    return board
+    
   }
-  
+  return board
 }
-scoreboard(9, inning())
+console.log(scoreboard(9, inning))
+
+//function 'breaks' if innings go above 20
