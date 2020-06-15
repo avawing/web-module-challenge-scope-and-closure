@@ -27,11 +27,11 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * counter1 is a constant that contains an method, counter two is a method.
+ * counter1 is a constant that contains a callback function, and counter two is a method.
  * Both of them do the same thing.
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * Counter two uses a closure. Giant hint is the curly bracers
+ * Counter one uses a closure. It returns a function within a function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  * Counter1 is preferable if you want to call the function by another name for some reason. Useful for renaming functions.
@@ -125,9 +125,11 @@ function scoreboard(number, callback) {
   let board = '';
   let score1 = 0;
   let score2 = 0;
+
   for(let i = 1; i <= number; i++){
     score1 += callback()
-      score2 += callback()
+    score2 += callback()
+    
     if (i === 1){     
       board += `1st Inning: ${score1} - ${score2}`
     }

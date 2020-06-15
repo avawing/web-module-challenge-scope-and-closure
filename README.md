@@ -70,7 +70,7 @@ b. Compare and contrast calling `dansRoll` the first and second time. What is al
 The name is the same, the number is different.
 
 c. What is the lexical scope of `newRoll`? 
-line 49 - 55
+line 50 - 55
 
 ### Task 2c - Exit Ticket
 
