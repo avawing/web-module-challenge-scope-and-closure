@@ -64,8 +64,10 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-The code ends on line 50, after the second time the roll is printed.
+Line 50 - it returns the function. A closure is the function within a function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The name is the same, the number is different.
 
 c. What is the lexical scope of `newRoll`? 
 line 49 - 55
@@ -101,6 +103,10 @@ addSix(21); // returns 27
 ```
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
+
+A function, ideally, should be a pure function - does not cause any side effects.
+Changing things causes bugs. Bugs are bad.
+Object oriented programming stores things in objects and calls them through the objects.
 
 ## Resources
 
