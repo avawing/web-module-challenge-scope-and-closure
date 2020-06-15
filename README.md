@@ -91,8 +91,12 @@ See if you can complete one or more of the following challenges:
   var a = b = 3;
 })();
 console.log("a defined? " + (typeof a !== 'undefined'));
+//a is undefined
 console.log("b defined? " + (typeof b !== 'undefined'));
+//b is three
 ```
+A is defined as something that hasn't been defined yet. If you had, for example, stated that a = b and b=3 - it would still be
+undefined because it is out of order. If you had stated b=3, a = b then a would be defined as b.
 
 2. Write a function that would allow you to do this using a closure. (This is another interview question we've seen before - when you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions)).
 
@@ -105,8 +109,11 @@ addSix(21); // returns 27
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
 
 A function, ideally, should be a pure function - does not cause any side effects.
-Changing things causes bugs. Bugs are bad.
+Changing things causes bugs. Bugs are bad. A bit tough to write.
+
 Object oriented programming stores things in objects and calls them through the objects.
+Objects can be changed and things get sticky. Changes things causes bugs and bugs are bad.
+A bit easier to write.
 
 ## Resources
 
